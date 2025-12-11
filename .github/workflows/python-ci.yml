@@ -1,4 +1,4 @@
-name: Python CI with Test Results
+name: Python CI
 
 on:
   push:
@@ -11,30 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1️⃣ Кодты репозиториден алу
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2️⃣ Python орнату
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: 3.11
 
-    # 3️⃣ Тәуелділіктерді орнату
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f "app_code/requirements.txt" ]; then pip install -r app_code/requirements.txt; fi
-        pip install unittest-xml-reporting
+        pip install xmlrunner
 
-    # 4️⃣ Тесттерді іске қосу және XML нәтижесін сақтау
     - name: Run tests and save XML results
       run: |
-        python -m unittest discover -s app_code/tests -p "test_*.py" -t . \
-        | python -m xmlrunner -o test-results
+        mkdir -p test-results
+        python -m xmlrunner discover -s app_code/tests -o test-results
 
-    # 5️⃣ XML нәтижелерін artifact ретінде жүктеу
+    - name: List test-results folder
+      run: ls -la test-results
+
     - name: Upload test results
       uses: actions/upload-artifact@v4
       with:
