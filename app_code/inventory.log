@@ -1,0 +1,28 @@
+2025-12-11 02:09:57,095 - INFO - Product added: ва (001) - 10.0 кг
+2025-12-11 02:10:09,164 - INFO - Movement added: {'product_code': '001', 'quantity': 15, 'direction': 'in'}
+2025-12-11 02:16:16,363 - INFO - Product added: ат (001) - 350.0 кг
+2025-12-11 02:16:29,427 - INFO - Movement added: {'product_code': '001', 'quantity': 1400, 'direction': 'in'}
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:01,402 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:01,403 - INFO - Movement added: {'product_code': '001', 'quantity': 5, 'direction': 'in'}
+2025-12-11 02:17:01,403 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:01,403 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:01,403 - INFO - Movement added: {'product_code': '002', 'quantity': 10, 'direction': 'in'}
+2025-12-11 02:17:01,403 - INFO - Movement added: {'product_code': '002', 'quantity': 4, 'direction': 'out'}
+2025-12-11 02:17:57,100 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:57,101 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:57,101 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:57,101 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:57,101 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:57,101 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:57,101 - INFO - Movement added: {'product_code': '001', 'quantity': 5, 'direction': 'in'}
+2025-12-11 02:17:57,102 - INFO - Product added: Тауар1 (001) - 10 кг
+2025-12-11 02:17:57,102 - INFO - Product added: Тауар2 (002) - 20 кг
+2025-12-11 02:17:57,102 - INFO - Movement added: {'product_code': '002', 'quantity': 10, 'direction': 'in'}
+2025-12-11 02:17:57,102 - INFO - Movement added: {'product_code': '002', 'quantity': 4, 'direction': 'out'}
+2025-12-11 09:26:06,640 - INFO - Product added: флеш (001) - 40.0 кг
+2025-12-11 09:26:30,814 - INFO - Movement added: {'product_code': '001', 'quantity': 1400, 'direction': 'in'}
