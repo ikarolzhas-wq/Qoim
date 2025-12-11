@@ -11,27 +11,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Checkout repository
+      - name: Set up job
         uses: actions/checkout@v3
 
+      # Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
+      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           if [ -f "app_code/requirements.txt" ]; then pip install -r app_code/requirements.txt; fi
 
-      - name: Run all tests and save results
+      # Run tests and save results
+      - name: Run tests
         run: |
           mkdir -p test_results
           echo "===== Test Results =====" > test_results/test_results.txt
           python -m unittest discover -s app_code/tests -p "test_*.py" >> test_results/test_results.txt 2>&1
           echo "===== End of Test Results =====" >> test_results/test_results.txt
 
-      - name: Upload test results artifact
+      # Upload test results artifact
+      - name: Upload test results
         uses: actions/upload-artifact@v3
         with:
           name: test-results
