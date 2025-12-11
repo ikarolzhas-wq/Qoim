@@ -2,36 +2,38 @@ name: Python CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Репозиторийді көшіру
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Python орнату
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
+      # 3️⃣ Тәуелділіктерді орнату
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          if [ -f "app_code/requirements.txt" ]; then pip install -r app_code/requirements.txt; fi
           pip install xmlrunner
-          if [ -f app_code/requirements.txt ]; then pip install -r app_code/requirements.txt; fi
 
-      - name: Run tests with XML output
+      # 4️⃣ Тесттерді іске қосу және нәтижені XML-ге шығару
+      - name: Run tests
         run: |
-          mkdir -p test-results
-          python -m xmlrunner discover -s app_code/tests -p "test_*.py" -o test-results || true
+          python -m xmlrunner discover -s app_code/tests -o test-results
 
+      # 5️⃣ Тест нәтижесін жүктеу
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
